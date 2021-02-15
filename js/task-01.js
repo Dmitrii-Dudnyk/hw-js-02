@@ -7,7 +7,6 @@ const logItems = function (array) {
   for (let i = 0; array.length > i; i++) {
     console.log(`${i + 1} - ${array[i]}`);
   }
-  return array;
 };
 
 logItems(["Mango", "Poly", "Ajax", "Lux", "Jay", "Kong"]);

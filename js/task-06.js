@@ -13,24 +13,24 @@ const numbers = [];
 let total = 0;
 
 while (true) {
-    input = prompt('Введите число');
+  input = prompt("Введите число");
 
-    if (input === null) {
-        for (let number of numbers) {
-            total += number;
-        }
-        console.log(`Общая сумма чисел равна ${total}`);
-        break;
+  if (input === null) {
+    for (let number of numbers) {
+      total += number;
     }
+    console.log(`Общая сумма чисел равна ${total}`);
+    break;
+  }
 
-    const notANumber = Number.isNaN(input);
-    if (notANumber) {
-        alert('Было введено не число, попробуйте еще раз');
-        continue;
-    }
+  const notANumber = Number.isNaN(input);
+  if (notANumber) {
+    alert("Было введено не число, попробуйте еще раз");
+    continue;
+  }
 
-    input = Number(input);
-    if (input) {
-        numbers.push(input);
-    }
+  input = Number(input);
+  if (input) {
+    numbers.push(input);
+  }
 }

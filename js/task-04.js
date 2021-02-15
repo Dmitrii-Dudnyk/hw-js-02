@@ -4,12 +4,8 @@
 // в конец строки троеточие '...', после чего возвращает укороченную версию.
 
 const formatString = function (string) {
-  if (string.length > 40) {
-    let trimmedString = string.slice(0, 40) + "...";
-    return trimmedString;
-  } else {
-    return string;
-  }
+  const trimmedString = string.slice(0, 40);
+  return trimmedString + (string.length > 40 ? "..." : "");
 };
 
 /*

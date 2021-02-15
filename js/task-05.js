@@ -3,19 +3,21 @@
 // слов нет функция возвращает false. Слова в строке могут быть в произвольном регистре.
 
 const checkForSpam = function (message) {
-    let querySpam = message.toLowerCase().includes('spam');
-    let querySale = message.toLowerCase().includes('sale');
-
-    return querySpam || querySale;
+  message = message.toLowerCase();
+  const wordToFind = ["spam", "sale"];
+  for (const word of wordToFind) {
+    if (message.includes(word)) return true;
+  }
+  return false;
 };
 
 /*
  * Вызовы функции для проверки работоспособности твоей реализации.
  */
-console.log(checkForSpam('Latest technology news')); // false
+console.log(checkForSpam("Latest technology news")); // false
 
-console.log(checkForSpam('JavaScript weekly newsletter')); // false
+console.log(checkForSpam("JavaScript weekly newsletter")); // false
 
-console.log(checkForSpam('Get best sale offers now!')); // true
+console.log(checkForSpam("Get best sale offers now!")); // true
 
-console.log(checkForSpam('[SPAM] How to earn fast money?')); // true
+console.log(checkForSpam("[SPAM] How to earn fast money?")); // true
