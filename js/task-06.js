@@ -16,21 +16,22 @@ while (true) {
   input = prompt("Введите число");
 
   if (input === null) {
-    for (let number of numbers) {
-      total += number;
+    if (numbers.length === 0) {
+      break;
+    }
+    for (const number of numbers) {
+      total += Number(number);
     }
     console.log(`Общая сумма чисел равна ${total}`);
     break;
   }
 
+  input = Number(input);
   const notANumber = Number.isNaN(input);
   if (notANumber) {
     alert("Было введено не число, попробуйте еще раз");
     continue;
   }
 
-  input = Number(input);
-  if (input) {
-    numbers.push(input);
-  }
+  input && numbers.push(input);
 }

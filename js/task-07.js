@@ -1,12 +1,14 @@
-// Задание 7 - дополнительное, выполнять не обязательно
 // Есть массив logins с логинами пользователей. Напиши скрипт добавления логина в массив logins. Добавляемый логин должен:
 // - проходить проверку на длину от 4 до 16-ти символов включительно
 // - быть уникален, то есть отсутствовать в массиве logins
 // Разбей задачу на подзадачи с помощью функций.
+
 // * Напиши функцию isLoginValid(login), в которой проверь количество символов параметра login и верни true или false в зависимости
 // от того, попадает ли длина параметра в заданный диапазон от 4-х до 16-ти символов включительно.
+
 // * Напиши функцию isLoginUnique(allLogins, login), которая принимает список всех логинов и добавляемый логин как параметры
 // и проверяет наличие login в массиве allLogins, возвращая true если такого логина еще нет и false если логин уже используется.
+
 // * Напиши функцию addLogin(allLogins, login) которая:
 // - Принимает новый логин и массив всех логинов как параметры
 // - Проверяет валидность логина используя вспомогательную функцию isLoginValid
@@ -23,24 +25,15 @@
 
 const logins = ["Mango", "robotGoogles", "Poly", "Aj4x1sBozz", "qwerty123"];
 
-const isLoginValid = function (login) {
-  return login.length >= 4 && login.length <= 16;
-};
-
-const isLoginUnique = function (allLogins, login) {
-  return !allLogins.includes(login);
-};
+const isLoginValid = (login) => login.length >= 4 && login.length <= 16;
+const isLoginUnique = (allLogins, login) => !allLogins.includes(login);
 
 const addLogin = function (allLogins, login) {
-  if (isLoginValid(login) === false) {
+  if (!isLoginValid(login)) {
     return "Ошибка! Логин должен быть от 4 до 16 символов";
-  }
-
-  if (isLoginUnique(allLogins, login) === false) {
+  } else if (!isLoginUnique(allLogins, login)) {
     return "Такой логин уже используется!";
-  }
-
-  if (isLoginValid(login) && isLoginUnique(allLogins, login)) {
+  } else {
     allLogins.push(login);
     return "Логин успешно добавлен!";
   }

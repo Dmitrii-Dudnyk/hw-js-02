@@ -1,10 +1,10 @@
 // Напиши функцию checkForSpam(message), принимающую 1 параметр message - строку. Функция проверяет
-// ее на содержание слов spam и sale. Если нашли зарещенное слово то функция возвращает true, если запрещенных
+// ее на содержание слов spam и sale. Если нашли запрещенное слово то функция возвращает true, если запрещенных
 // слов нет функция возвращает false. Слова в строке могут быть в произвольном регистре.
 
 const checkForSpam = function (message) {
   message = message.toLowerCase();
-  const wordToFind = ["spam", "sale"];
+  const wordToFind = ["sale", "spam"];
   for (const word of wordToFind) {
     if (message.includes(word)) return true;
   }

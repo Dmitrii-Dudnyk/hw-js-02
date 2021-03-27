@@ -2,10 +2,10 @@
 // (в строке будут только слова и пробелы) и возвращает самое длинное слово в этой строке.
 
 const findLongestWord = function (string) {
-  const wordsArray = string.split(" ");
+  const arrString = string.split(" ");
   let longestWord = "";
-  for (let word of wordsArray) {
-    longestWord = word.length > longestWord.length ? word : longestWord;
+  for (const word of arrString) {
+    word.length > longestWord.length ? (longestWord = word) : "";
   }
   return longestWord;
 };

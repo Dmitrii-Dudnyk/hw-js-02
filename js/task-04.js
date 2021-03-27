@@ -3,10 +3,8 @@
 // Если длина больше 40 символов, то функция обрезает строку до 40-ка символов и добавляет
 // в конец строки троеточие '...', после чего возвращает укороченную версию.
 
-const formatString = function (string) {
-  const trimmedString = string.slice(0, 40);
-  return trimmedString + (string.length > 40 ? "..." : "");
-};
+const formatString = (string) =>
+  string.length > 40 ? string.slice(0, 40) + "..." : string;
 
 /*
  * Вызовы функции для проверки работоспособности твоей реализации.
